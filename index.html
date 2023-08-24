@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  
+  <title>BAVT | Belgian Address Validation Tool</title>
+
+</head>
+<body>
+  <header class="main-header">
+    <div class="container flex">
+        <h1 class="logo">Belgian Address Validation Tool</h1>
+        <nav>
+          <ul>
+            <li>
+              <a href="#">Test</a>
+              <a href="#">About</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+  </header>
+  <!-- Input form section -->
+  <section class="input-form">
+    <div class="card">
+      <h2>Enter an address to validate</h2>
+      <form class="address-form-class" id="address-form">
+        <div class="first-line">
+          <input type="text" id=str-input class="form-input-long" placeholder="Street Name">
+          <input type="text" id=hnr-input class="form-input-small" placeholder="House Nr">
+        </div>
+        <div class="second-line">
+          <input type="text" id=pc-input class="form-input-small" placeholder="Postal Code">
+          <input type="text" id=mun-input class="form-input-long" placeholder="Municipality Name">
+        </div>
+        <div class="third-line">
+            <div class="container ">
+            <fieldset >
+             <!-- <legend>Select a region:</legend> -->
+              <div>
+                <input type="radio" id="Flanders" name="region" value="Flanders" checked >
+                <label for="Flanders"> Flanders</label>
+                <input type="radio" id="Brussels" name="region" value="Brussels" >
+                <label for="Brussels"> Brussels</label>
+                <input type="radio" id="Wallonia" name="region" value="Wallonia" >
+                <label for="Wallonia"> Wallonia</label>
+              </div>
+            </fieldset>
+          </div>
+            <button type="submit" class="btn-primary">Validate</button>
+            <button id="clear" class="btn-secondary">Clear All</button>
+        </div>
+      </form>
+    </div>
+  </section>  
+  <br>
+    <!-- output sections -->
+    <div class="grid" >
+      <div class="output card" >
+
+        <h2>Regional Source</h2>
+        <div id="alert-regional-source" class="alert"></div>
+        <table id="output-regional-source">
+          <thead id="thead-regional-source"></thead>
+          <tbody id="tbody-regional-source"></tbody>
+        </table>
+      </div>
+      <div class="output card" id="bpost-output-card" >
+
+        <h2>Bpost</h2>
+        <div class="container flex">
+          <div id="alert-bpost" class="alert"></div>
+          <table id="output-bpost">
+            <thead id="thead-bpost"></thead>
+            <tbody id="tbody-bpost"></tbody>
+          </table>
+          <table id="output-bpost-error">
+            <thead id="thead-bpost-error"></thead>
+            <tbody id="tbody-bpost-error"></tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+    <br>
+  <footer class="main-footer">
+    <div class="container flex">
+      <h3>footer</h3>
+    </div>
+  </footer>
+</body>
+<script type="Module" src="src/app.js"></script> 
+</html>
