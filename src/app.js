@@ -130,11 +130,11 @@ async function onAddressValidateSubmit(e) {
       console.log('A region must be selected');
   }
 
-  //bpost = await addressAPI.validateAddress(addressToValidate, 'Bpost');
+  bpost = await addressAPI.validateAddress(addressToValidate, 'Bpost');
   //console.log(bpost);
   console.log(regSource);
   displayAddressesRegSource(regSource.addresses, regSource.errors);
-  //displayAddressesBpost(bpost.addresses, bpost.errors);
+  displayAddressesBpost(bpost.addresses, bpost.errors);
 }
 
 
@@ -146,7 +146,6 @@ function onClearAll(e) {
 
 function init() {
   // Event Listeners
-  //const addressForm = document.querySelector('address-form-class');
   addressForm.addEventListener('submit', onAddressValidateSubmit);
   clearBtn.addEventListener('click', onClearAll);
 }
